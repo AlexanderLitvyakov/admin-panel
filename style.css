@@ -1,9 +1,7 @@
 body{
     background-color: #E5E5E5;
 }
-.mainwrapper{/* MainWrapper */
-
-    /* Auto Layout */
+.main-wrapper{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -17,56 +15,63 @@ body{
 
 .page-header{
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction:row;
+    justify-content: space-between;
     width: 100%;
     height: 2rem;
-        /* Light */
-    background: #A8A8FF;
+    background-color: #A8A8FF;
     font-family: Ubuntu;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
     line-height: 2rem;
-    color: #8055FF;
-
-/* identical to box height, or 123% */
+    color: #000000;
     letter-spacing: -0.2px;
+   
+}
+.page-header__empty-box{
+    display: flex;
+    flex-grow: 3;
+}
+.page-header__ico-left{
+    display: flex;
+    content: url(../admin-panel/icons/sun-ico.png);
+    width: 1rem;
+    height: 1rem;
+    margin: 0.5rem;
+}
+.page-header__button{
+    display: flex;
+    font-size: 13px;
+    color: #459DF5;
+    margin-right: 0.25rem;
 }
 
-.filters{
+.filter{
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    position: relative;
     width:100%;
-
-/* Light */
     border: 2px solid #A8A8FF;
     box-sizing: border-box;
 }
 
-.item {
+.filter__item {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    position: static;
     width: 2rem;
     height: 2rem;
-
-/* Middle */
     background: #8055FF;
-
-/* Inside Auto Layout */
     flex: none;
     order: 1;
     flex-grow: 0;
     margin-top: 0.5rem;
     margin-right: 0.5rem;
 }
-.item-group{
+.filter__item-group{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -74,32 +79,27 @@ body{
     width: 100%;
 }
 
-.item1{
+.filter__item-group_item1{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     position: static;
     width: 16rem;
     height: 2rem;
-/* Middle */
     background: #8055FF;
     flex: none;
     order: 0;
     flex-grow: 0;
     margin: 0.5rem;
 }
-.item2 {/* Auto Layout */
+.filter__item-group_item2 {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     position: static;
     width: 2rem;
     height: 2rem;
-    
-    /* Middle */
     background: #8055FF;
-    
-    /* Inside Auto Layout */
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -111,12 +111,9 @@ body{
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    
     position: relative;
     width: 100%;
     height: 100vh;
-    
-    /* Middle */
     border: 2px solid #8055FF;
     box-sizing: border-box;
 
@@ -126,27 +123,73 @@ body{
     flex-direction: row;
     align-items: flex-start;
     position: static;
-    height: 3rem;
-    
-    /* Middle */
+    height: 2.5rem;
     background: #8055FF;
-    
-    /* Inside Auto Layout */
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
     margin: 0px 0px;
 }
+.table-head{
+    display: flex;
+    flex-direction: row;
+    width: 2rem;
+    height: 2.5rem;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0.75rem 1rem;
+}
+.checkbox{
+    position: static;
+    width: 1rem;
+    height: 1rem;
+    background: #FFFFFF;
+    border: 1px solid #BAD8F5;
+    box-sizing: border-box;
+    border-radius: 2px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+.text-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    width: 29px;
+    height: 16px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0; 
+}
+.v-arrow{
+    width: 16px;
+    height: 16px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+
+.to-bot{
+    position: absolute;
+    width: 6px;
+    height: 5px;
+    left: calc(50% - 6px/2 + 6px);
+    top: calc(50% - 5px/2 + 5.5px);
+    background: #EBF0F5;
+    transform: rotate(-180deg);
+}
+
 .middleblock-table{display: flex;
     flex-direction: row;
     align-items: flex-start;
     position: static;
-    
-    /* Light */
     background: #A8A8FF;
-    
-    /* Inside Auto Layout */
     flex: none;
     order: 1;
     align-self: stretch;
@@ -156,11 +199,8 @@ body{
     flex-direction: row;
     align-items: flex-start;
     position: static;
-    height: 3rem;
-    /* Middle */
+    height: 2.5rem;
     background: #8055FF;
-    
-    /* Inside Auto Layout */
     flex: none;
     order: 2;
     align-self: stretch;
