@@ -4,7 +4,6 @@
     --table-header-items-color: #8055FF;
     --table-footer-color: #8055FF;
     --table-middleblock-color:  #A8A8FF; 
-    
 }
 body{
     background-color: var(--body-mainColor);
