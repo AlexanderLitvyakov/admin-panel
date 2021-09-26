@@ -42,7 +42,6 @@
   }
   .input__item_error{
     border: 1px solid var(--background-input-icorrect);
-    /* background: url('../icons/x-medium.svg') no-repeat right; */
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23BAD8F5' stroke='none'%3E%3Cpath d='M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5' fill='none'/%3E%3C/svg%3E") no-repeat right;
     background-size: 1rem 1rem;
   }
