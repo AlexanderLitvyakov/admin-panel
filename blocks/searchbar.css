@@ -1,0 +1,40 @@
+:root {
+    --background-gray: #E5E5E5;
+    --searchbar-border: #459DF5;
+    --border-wrapper:#8055ff;
+}
+body{
+    display: flex;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 2rem;
+    letter-spacing: -0.2px;
+    background-color: yellowgreen;
+}
+.searchbar {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    height: 12rem;
+    width: 22rem;
+    background-color: var(--background-gray);
+    border: 0.1rem dashed var(--border-wrapper);
+    border-radius: 0.1rem;
+}
+.searchbar__input {
+    display: flex;
+    border: 0.1rem solid var(--searchbar-border)
+}
+.searchbar__button {
+    background-image: url(./icons/search.png);
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
+}
+.searchbar__input-bot{
+    width: 11rem;
+}
