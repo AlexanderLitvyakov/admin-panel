@@ -6,13 +6,17 @@
     --background-input-icorrect: #F53152;
     --background-input-stroke-middle: #8055FF;
   }
+  .body {
+    display: flex;
+    flex-direction: column;
+  }
   .input-wrapper{
     width: 22rem;
     height: 25rem;
     margin: 2rem auto;
     border: 1px dashed var(--background-input-stroke-middle);
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
