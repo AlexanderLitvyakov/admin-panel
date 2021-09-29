@@ -2,16 +2,20 @@
     --background-gray: #E5E5E5;
     --searchbar-border: #459DF5;
     --border-wrapper:#8055ff;
+    --icons-clean: rgba(255, 255, 255, 0);
 }
+::placeholder {
+    color: #BAD8F5;
+}
+input{outline: none;}
 body{
     display: flex;
+    justify-content: center;
     font-family: Ubuntu;
     font-style: normal;
-    font-weight: bold;
     font-size: 13px;
     line-height: 2rem;
     letter-spacing: -0.2px;
-    background-color: yellowgreen;
 }
 .searchbar {
     margin-top: 5rem;
@@ -23,18 +27,44 @@ body{
     width: 22rem;
     background-color: var(--background-gray);
     border: 0.1rem dashed var(--border-wrapper);
-    border-radius: 0.1rem;
+    border-radius: 0.25rem;
 }
 .searchbar__input {
     display: flex;
-    border: 0.1rem solid var(--searchbar-border)
+    align-items: center;
+    justify-content: space-between;
+    height: 2rem;
+    width: 16rem;
+    border: 0.1rem solid var(--searchbar-border);
+    border-radius: 0.25rem;
+    background-color: white;
+    padding: 0.25rem;
 }
 .searchbar__button {
+    border: none;
     background-image: url(./icons/search.png);
     background-size: cover;
+    background-color: var(--icons-clean);
     height: 2rem;
     width: 2rem;
 }
+.searchbar__button-clear{
+    border: none;
+    background-image: url(./icons/x-ico.png);
+    background-size: cover;
+    background-color: var(--icons-clean);
+    height: 2rem;
+    width: 2rem;
+}
+.searchbar__button-clear:hover {
+    background-image: url(./icons/X-ico.png);
+}
+.searchbar__input-top{
+    border: none;
+    width: 13rem;
+    font: var(--text-color-inbar);
+    }
 .searchbar__input-bot{
+    border: none;
     width: 11rem;
 }
