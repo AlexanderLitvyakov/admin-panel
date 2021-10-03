@@ -24,7 +24,7 @@ body{
     border-radius: 0.25rem;
     padding: 1.5rem;
 }
-.checkbox__item {
+.checkbox__label {
     position: relative;
     display: flex;
 }
