@@ -58,5 +58,5 @@ border: 0.0625rem solid var(--border-error);
 }
 .input-items__item-lock{
 background-color: var(--input-lock);
-  border: 0.0625rem solid var(--input-border-placeholder);;
+border: 0.0625rem solid var(--input-border-placeholder);;
 }
