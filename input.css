@@ -57,6 +57,7 @@
     
   }
   .input-items__item-lock{
+  pointer-events: none;
   background-color: var(--input-lock);
   border: 0.0625rem solid var(--input-border-placeholder);;
   }
