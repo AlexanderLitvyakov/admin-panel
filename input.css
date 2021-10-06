@@ -11,12 +11,12 @@
     font-family: 'Ubuntu', sans-serif;
     font-size: 13px;
   }
-  .wrapper{
+  .input-wrapper{
   width: 22rem;
   height: 25rem;
   margin: 2rem auto;
   border: 0.0625rem dashed var(--background-input-border);
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;

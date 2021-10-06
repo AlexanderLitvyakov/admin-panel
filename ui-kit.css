@@ -1,8 +1,16 @@
 body{
 }
 .main-wrapper{
-    display: grid;
-    grid-template-rows: 25rem 25rem;
-    grid-template-columns: 22rem 22rem;
-    grid-template-areas: 2 1;
+ display: grid;
+ grid-template-columns: 22rem auto auto;
+ grid-template-rows: auto auto;
+ grid-auto-flow: column;
+ grid-gap: 6rem;
 }
+.input-wrapper{
+ grid-row: span 2;
+}
+.searchbar-wrapper{
+    grid-column: span 2;
+}
+

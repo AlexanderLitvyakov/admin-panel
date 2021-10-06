@@ -19,12 +19,9 @@ body{
     align-items: center;
     height: 4rem;
     width: 6.5rem;
-    border: 0.1rem dashed var(--border-wrapper);
+    border: 0.0625rem dashed var(--border-wrapper);
     border-radius: 0.25rem;
     padding: 1.25rem;
-}
-input{
-    display: none;
 }
 .radio__item {
     display: inline-block;
