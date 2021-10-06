@@ -1,0 +1,8 @@
+body{
+}
+.main-wrapper{
+    display: grid;
+    grid-template-rows: 25rem 25rem;
+    grid-template-columns: 22rem 22rem;
+    grid-template-areas: 2 1;
+}
