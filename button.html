@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="button.css">
+    <title>Компонент 'button'</title>
+</head>
+<body>
+    <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <symbol id="bin" viewbox="0 0 16 16">
+            <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5" fill="none" stroke-linecap="round"/>
+            <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
+        </symbol>
+    </svg>
+    <div class="buttons__table">
+        <div class="buttons__row">
+            <div class="buttons__column">
+                <form class="buttons__form">
+
+                    <button class="button">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-icon">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-text">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                </form>
+            </div>
+            <div class="buttons__column">
+                <form class="buttons__form">
+
+                    <button class="button button_transparent">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-icon button_transparent">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-text button_transparent">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                </form>
+                </div>
+            <div class="buttons__column">
+                <form class="buttons__form">
+
+                    <button class="button button_long button_disabled" disabled>
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-icon button_long button_disabled" disabled>
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+        <div class="buttons__row">
+            <div class="buttons__column">
+                <form class="buttons__form">
+
+                    <button class="button button_small">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-icon button_small-no-icon">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-text button_small-no-text">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                </form>
+            </div>
+            <div class="buttons__column">
+                <form class="buttons__form">
+
+                    <button class="button button_transparent button_small">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-icon button_transparent button_small-no-icon">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                    <button class="button button_no-text button_transparent button_small-no-text">
+                        <svg class="button__icon">
+                            <use xlink:href="#bin"></use>
+                        </svg>
+                        <span class="button__text">Text here</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
