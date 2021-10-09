@@ -1,14 +1,31 @@
 .main-wrapper{
- display: grid;
- grid-template-columns: 22rem auto auto;
- grid-template-rows: auto auto;
- grid-auto-flow: column;
- grid-gap: 6rem;
-}
-.input-wrapper{
- grid-row: span 2;
-}
-.searchbar-wrapper{
-    grid-column: span 2;
+    display: grid;
+    grid-template-rows: 3rem 15rem 3rem auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-auto-flow: column;
+    grid-column-gap: 6rem;
 }
 
+.header{
+    margin-top: 1.5rem;
+}
+.input-wrapper{
+    grid-row: span 3;
+    align-self: start;
+}
+.searchbar-header{
+    grid-column-start: 2;
+    grid-column: span 2;
+    margin-top: 1.5rem;
+}
+.searchbar-wrapper{
+    grid-column-start: 2;
+    grid-column: span 2;
+}
+.checkbox-wrapper{
+    grid-row: span 3;
+}
+.svg{
+    height: 0.5rem;
+    width: 0.5rem;
+}

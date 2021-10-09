@@ -4,42 +4,47 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="ui-kit.css">
   <link rel="stylesheet" href="input.css">
   <link rel="stylesheet" href="searchbar.css">
   <link rel="stylesheet" href="checkbox.css">
   <link rel="stylesheet" href="radio.css">
-  <link rel="stylesheet" href="reset.css">
   <title>Компоненты</title>
 </head>
 <body>
-    <div class="main-wrapper">
-  
-    <!------------------------------ Ввод данных ------------------------------------------->
+  <div class="main-wrapper">
+<!------------------------------ Ввод данных ------------------------------------------->
+    <div class="header">Input</div>
     <div class="input-wrapper">
     <div class="input">
       <label class="input__label">Дата и время заказа</label>
-      <div class="input-items">
+        <div class="input-items">
         <input class="input-items__item" type="text" placeholder="Введите">
-      </div>
+        </div>
     </div>
     <div class="input">
       <label class="input__label">Дата и время заказа</label>
-      <div class="input-items">
-        <input class="input-items__item input-items__item-error" type="text" placeholder="Введите" value="16.12.2021">
-        <svg class="input-items__img input-items__img-error" viewBox="0 0 16 16" fill="none" stroke="#BAD8F5">
-        <path d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5" fill="none"/></svg>
-      </div>
+        <div class="input-items">
+          <input class="input-items__item input-items__item-error" type="text" placeholder="Введите" value="16.12.2021">
+          <svg class="input-items__img input-items__img-error" viewBox="0 0 16 16" fill="none" stroke="#BAD8F5">
+          <path d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5" fill="none"/></svg>
+        </div>
     </div>
     <div class="input">
       <label class="input__label">Дата и время заказа</label>
-      <div class="input-items">
-        <input class="input-items__item input-items__item-lock" type="text" placeholder="Введите" value="16.12.2021">
-        <svg class="input-items__img input-items__img-lock" viewBox="0 0 16 16" fill="#000" stroke="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z" stroke="none"/><path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z" stroke="none"/></svg>
-      </div>
+        <div class="input-items">
+          <input class="input-items__item input-items__item-lock" type="text" placeholder="Введите" value="16.12.2021">
+          <svg class="input-items__img input-items__img-lock" viewBox="0 0 16 16" fill="#000" stroke="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z" stroke="none"/><path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z" stroke="none"/></svg>
+        </div>
     </div>
-    </div>
-    <!-------------------------------- Строка поиска -------------------------------------->
+  </div>
+<!--------------------------------------- Кнлпки -------------------------------------------->
+
+    <div class="header">Button</div>
+    <div class="buttons">erio3i4950-302-02fk;s</div>
+<!----------------------------------- Строка поиска ---------------------------------------->
+    <div class="searchbar-header">Searchbar</div>
     <div class="searchbar-wrapper">
         <form class="searchbar__input">
             <svg class="input__img input__img-search" viewBox="0 0 16 16" fill="none" stroke="#459DF5">
@@ -51,7 +56,7 @@
             <svg class="input__img input__img-search" viewBox="0 0 16 16" fill="none" stroke="#459DF5">
             <path d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5" fill="none"/>
             </svg>
-            <input class="searchbar__input_bot" value="50744"></input>
+            <input class="searchbar__input_bot" value="50744" placeholder="Номер заказа или ФИО"></input>
             <button class="searchbar__button_clear">
             <svg class="button__img" viewBox="0 0 16 16" fill="none" stroke="#BAD8F5">
             <path d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5" fill="none"/>
@@ -59,8 +64,16 @@
             </button>
         </form>
     </div>
- 
-    <!--------------------------------- Компоненты Radio & Checkbox --------------------->
+<!------------------------------------- Checkbox ------------------------------------------>
+    <div class="header">
+      <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+          <rect opacity="0.8" x="0.272064" y="13" width="8" height="8" transform="rotate(-45 0.272064 13)" fill="#8055FF"/>
+          <rect opacity="0.8" x="7.34314" y="5.92894" width="8" height="8" transform="rotate(-45 7.34314 5.92894)" fill="#8055FF"/>
+          <rect opacity="0.8" x="14.4142" y="13" width="8" height="8" transform="rotate(-45 14.4142 13)" fill="#8055FF"/>
+          <rect opacity="0.8" x="7.34314" y="20.0711" width="8" height="8" transform="rotate(-45 7.34314 20.0711)" fill="#8055FF"/>
+      </svg>
+      Checkbox
+    </div>
     <div class="checkbox-wrapper">
         <label class="checkbox__label">
             <input class="checkbox__input" type="checkbox">
@@ -74,6 +87,16 @@
             <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
             </svg>
         </label>
+    </div>
+<!----------------------------------------- Radio ----------------------------------------->
+    <div class="header">
+      <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
+        <rect opacity="0.8" x="0.272064" y="13" width="8" height="8" transform="rotate(-45 0.272064 13)" fill="#8055FF"/>
+        <rect opacity="0.8" x="7.34314" y="5.92894" width="8" height="8" transform="rotate(-45 7.34314 5.92894)" fill="#8055FF"/>
+        <rect opacity="0.8" x="14.4142" y="13" width="8" height="8" transform="rotate(-45 14.4142 13)" fill="#8055FF"/>
+        <rect opacity="0.8" x="7.34314" y="20.0711" width="8" height="8" transform="rotate(-45 7.34314 20.0711)" fill="#8055FF"/>
+      </svg>
+      Radio
     </div>
     <div class="radio-wrapper">
         <div class="radio__item">

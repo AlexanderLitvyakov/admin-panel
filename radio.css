@@ -7,14 +7,12 @@
 }
 body{
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: var(--background-gray);
 }
 .radio-wrapper{
     display:flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 4rem;
@@ -24,9 +22,8 @@ body{
     padding: 1.25rem;
 }
 .radio__item {
-    display: inline-block;
     position: relative;
-    padding: 0 6px;
+    padding: 0 0.25rem;
 }
 .radio__item input[type='radio'] {
     display: none;
@@ -35,8 +32,7 @@ body{
     content: " ";
     display: inline-block;
     position: relative;
-    top: 5px;
-    margin: 0 5px 0 0;
+    top: 0.25rem;
     width: 1rem;
     height: 1rem;
     border-radius: 1rem;
@@ -50,7 +46,7 @@ body{
     width: 1rem;
     height: 1rem;
     position: absolute;
-    top: 0.3rem;
+    top: 0.25rem;
     content: " ";
     display: block;
     color: var(--radio-border);
