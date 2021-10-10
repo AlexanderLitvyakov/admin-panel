@@ -15,47 +15,19 @@ body {
 .svg {
     display: none;
 }
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
-    height: 100vh;
-}
-
 .buttons__table {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-row-gap: 3rem;
     width: 36rem;
     height: 23.5rem;
-    padding: 3rem;
     border: 0.0625rem dashed var(--background-buttons-stroke-middle);
     border-radius: 0.25rem;
+    box-sizing: border-box;
+    padding: 3rem;
 }
-
-.buttons__column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 33.3%;
-}
-
-.buttons__row {
-    display: flex;
-    margin-bottom: 3rem;
-}
-
-.buttons__row:last-child {
-    margin: 0;
-}
-
-.buttons__form {
-    display: flex;
-    flex-direction: column;
-}
-
 .button {
     display: flex;
     width: 7rem;
