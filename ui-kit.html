@@ -10,12 +10,25 @@
   <link rel="stylesheet" href="searchbar.css">
   <link rel="stylesheet" href="checkbox.css">
   <link rel="stylesheet" href="radio.css">
+  <link rel="stylesheet" href="button.css">
   <title>Компоненты</title>
 </head>
 <body>
+  <svg class="svg-header" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol id="svg-h" viewbox="0 0 26 26">
+      <rect opacity="0.8" x="0.272064" y="13" width="8" height="8" transform="rotate(-45 0.272064 13)" fill="#8055FF"/>
+      <rect opacity="0.8" x="7.34314" y="5.92894" width="8" height="8" transform="rotate(-45 7.34314 5.92894)" fill="#8055FF"/>
+      <rect opacity="0.8" x="14.4142" y="13" width="8" height="8" transform="rotate(-45 14.4142 13)" fill="#8055FF"/>
+      <rect opacity="0.8" x="7.34314" y="20.0711" width="8" height="8" transform="rotate(-45 7.34314 20.0711)" fill="#8055FF"/>
+    </symbol>
+</svg>
   <div class="main-wrapper">
 <!------------------------------ Ввод данных ------------------------------------------->
-    <div class="header">Input</div>
+    <div class="header">
+      <svg class="svg-header">
+        <use xlink:href="#svg-h"></use>
+    </svg>
+  Input</div>
     <div class="input-wrapper">
     <div class="input">
       <label class="input__label">Дата и время заказа</label>
@@ -39,12 +52,134 @@
         </div>
     </div>
   </div>
-<!--------------------------------------- Кнлпки -------------------------------------------->
-
-    <div class="header">Button</div>
-    <div class="buttons">erio3i4950-302-02fk;s</div>
+<!--------------------------------------- Кнопки -------------------------------------------->
+    <div class="header">
+      <svg class="svg-header">
+        <use xlink:href="#svg-h"></use>
+    </svg>
+    Button</div>
+    <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <symbol id="bin" viewbox="0 0 16 16">
+        <path d="M6 14.5H15" fill="none"/>
+        <path d="M5 13L1.5 14.5L3 11M5 13L3 11M5 13L12 6M3 11L10 4M11 3L12.5 1.5L14.5 3.5L13 5M11 3L13 5M11 3L10 4M13 5L12 6M12 6L10 4" fill="none"/>
+      </symbol>
+  </svg>
+  <div class="buttons__table">
+      <div class="buttons__row">
+          <div class="buttons__column">
+              <form class="buttons__form">
+                  <button class="button">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-icon">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-text">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+              </form>
+          </div>
+          <div class="buttons__column">
+              <form class="buttons__form">
+                  <button class="button button_transparent">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-icon button_transparent">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-text button_transparent">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+              </form>
+              </div>
+          <div class="buttons__column">
+              <form class="buttons__form">
+                  <button class="button button_long button_disabled" disabled>
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-icon button_long button_disabled" disabled>
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+              </form>
+          </div>
+      </div>
+      <div class="buttons__row">
+          <div class="buttons__column">
+              <form class="buttons__form">
+                  <button class="button button_small">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-icon button_small-no-icon">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-text button_small-no-text">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+              </form>
+          </div>
+          <div class="buttons__column">
+              <form class="buttons__form">
+                  <button class="button button_transparent button_small">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-icon button_transparent button_small-no-icon">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+                  <button class="button button_no-text button_transparent button_small-no-text">
+                      <svg class="button__icon">
+                          <use xlink:href="#bin"></use>
+                      </svg>
+                      <span class="button__text">Text here</span>
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
 <!----------------------------------- Строка поиска ---------------------------------------->
-    <div class="searchbar-header">Searchbar</div>
+    <div class="searchbar-header">
+        <svg class="svg-header">
+          <use xlink:href="#svg-h"></use>
+      </svg>
+      Searchbar</div>
     <div class="searchbar-wrapper">
         <form class="searchbar__input">
             <svg class="input__img input__img-search" viewBox="0 0 16 16" fill="none" stroke="#459DF5">
@@ -66,12 +201,9 @@
     </div>
 <!------------------------------------- Checkbox ------------------------------------------>
     <div class="header">
-      <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
-          <rect opacity="0.8" x="0.272064" y="13" width="8" height="8" transform="rotate(-45 0.272064 13)" fill="#8055FF"/>
-          <rect opacity="0.8" x="7.34314" y="5.92894" width="8" height="8" transform="rotate(-45 7.34314 5.92894)" fill="#8055FF"/>
-          <rect opacity="0.8" x="14.4142" y="13" width="8" height="8" transform="rotate(-45 14.4142 13)" fill="#8055FF"/>
-          <rect opacity="0.8" x="7.34314" y="20.0711" width="8" height="8" transform="rotate(-45 7.34314 20.0711)" fill="#8055FF"/>
-      </svg>
+        <svg class="svg-header">
+          <use xlink:href="#svg-h"></use>
+        </svg>
       Checkbox
     </div>
     <div class="checkbox-wrapper">
@@ -90,12 +222,9 @@
     </div>
 <!----------------------------------------- Radio ----------------------------------------->
     <div class="header">
-      <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26">
-        <rect opacity="0.8" x="0.272064" y="13" width="8" height="8" transform="rotate(-45 0.272064 13)" fill="#8055FF"/>
-        <rect opacity="0.8" x="7.34314" y="5.92894" width="8" height="8" transform="rotate(-45 7.34314 5.92894)" fill="#8055FF"/>
-        <rect opacity="0.8" x="14.4142" y="13" width="8" height="8" transform="rotate(-45 14.4142 13)" fill="#8055FF"/>
-        <rect opacity="0.8" x="7.34314" y="20.0711" width="8" height="8" transform="rotate(-45 7.34314 20.0711)" fill="#8055FF"/>
-      </svg>
+        <svg class="svg-header">
+          <use xlink:href="#svg-h"></use>
+        </svg>
       Radio
     </div>
     <div class="radio-wrapper">

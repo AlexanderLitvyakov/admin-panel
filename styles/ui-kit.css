@@ -1,22 +1,30 @@
+:root{
+    --background-input-border: #8055FF;
+}
 .main-wrapper{
     display: grid;
     grid-template-rows: 3rem 15rem 3rem auto auto auto;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 22rem 5rem auto auto;
     grid-auto-flow: column;
-    grid-column-gap: 6rem;
+    grid-column-gap: 6rem ;
 }
 
 .header{
     margin-top: 1.5rem;
+    color: var(--background-input-border);
 }
 .input-wrapper{
     grid-row: span 3;
     align-self: start;
 }
+.butons__table{
+    grid-column: span 2;
+}
 .searchbar-header{
     grid-column-start: 2;
     grid-column: span 2;
     margin-top: 1.5rem;
+    color: var(--background-input-border);
 }
 .searchbar-wrapper{
     grid-column-start: 2;
@@ -25,7 +33,8 @@
 .checkbox-wrapper{
     grid-row: span 3;
 }
-.svg{
+.svg-header{
     height: 0.5rem;
     width: 0.5rem;
 }
+
