@@ -57,7 +57,7 @@ body{
 }
 .searchbar__button.searchbar__button_clear{
     margin-top: 0.25rem;
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
     background-color: var(--icons-clean);
     border: none;
     background-size: cover;
