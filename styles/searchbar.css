@@ -42,17 +42,22 @@ body{
     flex-shrink: 0;
     
 }
-.searchbar__input_top{
+.searchbar__input.searchbar__input_top{
     border: none;
     font: var(--text-color-inbar);
     margin-left: 0.5rem;
+    margin-top: 0;
+    background-color: var(--icons-clean);
     }
-.searchbar__input_bot{
+.searchbar__input.searchbar__input_bot{
     border: none;
     padding-left: 0.5rem;
+    margin-top: 0;
+    background-color: var(--icons-clean);
 }
-.searchbar__button_clear{
-    margin-top: 0.2rem;
+.searchbar__button.searchbar__button_clear{
+    margin-top: 0.25rem;
+    margin-right: 0.25rem;
     background-color: var(--icons-clean);
     border: none;
     background-size: cover;
