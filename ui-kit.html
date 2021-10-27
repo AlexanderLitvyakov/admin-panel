@@ -11,263 +11,1242 @@
   <link rel="stylesheet" href="./styles/checkbox.css">
   <link rel="stylesheet" href="./styles/radio.css">
   <link rel="stylesheet" href="./styles/button.css">
+  <link rel="stylesheet" href="./styles/dropdowns.css">
+  <link rel="stylesheet" href="./styles/body.css">
   <title>Компоненты</title>
 </head>
 <body>
-  <svg class="svg-header" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <symbol id="svg-h" viewbox="0 0 26 26">
-      <rect opacity="0.8" x="0.272064" y="13" width="8" height="8" transform="rotate(-45 0.272064 13)" fill="#8055FF"/>
-      <rect opacity="0.8" x="7.34314" y="5.92894" width="8" height="8" transform="rotate(-45 7.34314 5.92894)" fill="#8055FF"/>
-      <rect opacity="0.8" x="14.4142" y="13" width="8" height="8" transform="rotate(-45 14.4142 13)" fill="#8055FF"/>
-      <rect opacity="0.8" x="7.34314" y="20.0711" width="8" height="8" transform="rotate(-45 7.34314 20.0711)" fill="#8055FF"/>
-    </symbol>
-    <symbol id="incorrect" viewBox="0 0 16 16">
-        <path fill="none" d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5"/>
-    </symbol>
-    <symbol id="search" viewBox="0 0 16 16">
-    <path fill="none" d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5" />
-    </symbol>
-    <symbol id="filter" viewBox="0 0 16 16">
-        <path d="M12 4H4V5.5L7 8.5V12L9 13V8.5L12 5.5V4Z" stroke="none"/>
-    </symbol>
-    <symbol id="sun" viewBox="0 0 16 16">
-        <circle cx="8" cy="8" r="4" stroke="none"/>
-        <path d="M15 9L16 8L15 7H13V9H15Z" stroke="none"/>
-        <path d="M1 9L0 8L1 7H3V9H1Z" stroke="none"/>
-        <path d="M7 15L8 16L9 15V13H7V15Z" stroke="none"/>
-        <path d="M7 1L8 0L9 1V3H7V1Z" stroke="none"/>
-        <path d="M12.5 14H14L14 12.5L12.5 11L11 12.5L12.5 14Z" stroke="none"/>
-        <path d="M2 3.5L2 2L3.5 2L5 3.5L3.5 5L2 3.5Z" stroke="none"/>
-        <path d="M3.5 14H2L2 12.5L3.5 11L5 12.5L3.5 14Z" stroke="none"/>
-        <path d="M14 3.5V2L12.5 2L11 3.5L12.5 5L14 3.5Z" stroke="none"/>
-    </symbol>     
-    <symbol id="refresh" viewBox="0 0 16 16">
-        <path d="M2.50251 7.5V8.5C2.50251 10.75 4.75251 13.5 8.00251 13.5C10 13.5 11.6187 12.5 12.6 11" fill="none"/>
-        <path d="M13.5 8.5V7.5C13.5 5.25 11.25 2.5 7.99997 2.5C6 2.5 4.38135 3.5 3.4 5" fill="none"/>
-        <path d="M4.5 9.5L2.50254 7.5L0.752533 9.75" fill="none"/>
-        <path d="M11.5 6.5L13.5 8.5L15.25 6.25" fill="none"/>
-    </symbol>
-    <symbol id="v_arrow" viewBox="0 0 16 16">
-        <path d="M5 6H11V6.5L8.25 11H7.75L5 6.5V6Z" stroke="none"/>
-    </symbol>
-    <symbol id="checkmark" viewBox="0 0 16 16">
-        <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-    </symbol>
-    <symbol id="pencil" viewBox="0 0 16 16">
-        <path d="M6 14.5H15" fill="none"/>
-        <path d="M5 13L1.5 14.5L3 11M5 13L3 11M5 13L12 6M3 11L10 4M11 3L12.5 1.5L14.5 3.5L13 5M11 3L13 5M11 3L10 4M13 5L12 6M12 6L10 4" fill="none"/>
-    </symbol>
-    <symbol id="bin" viewBox="0 0 16 16">
-        <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5" fill="none" stroke-linecap="round"/>
-        <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="moon" viewBox="0 0 16 16">
-        <path d="M8 15C12.0269 15 15.5 11.5021 15 7.5C14.7688 10.0468 12.6071 12 10 12C7.23858 12 5 9.76142 5 7C5 4.23858 7.23858 2 10 2C11 2 12 2.5 12 2.5C11 1.5 10 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke="none"/>
-    </symbol>
-</svg>
-  <div class="main-wrapper">
-<!------------------------------ Ввод данных ------------------------------------------->
-    <div class="header">
-      <svg class="svg-header">
-        <use xlink:href="#svg-h"></use>
-    </svg>
-    Input
-    </div>
-    <div class="input-wrapper">
-    <div class="input">
-      <label class="input__label">Дата и время заказа</label>
-        <div class="input-items">
-        <input class="input-items__item" type="text" placeholder="Введите">
-        </div>
-    </div>
-    <div class="input">
-      <label class="input__label">Дата и время заказа</label>
-        <div class="input-items">
-          <input class="input-items__item input-items__item-error" type="text" placeholder="Введите" value="16.12.2021">
-          <svg class="input-items__img input-items__img-error" viewBox="0 0 16 16" fill="none" stroke="#BAD8F5">
-          <path d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5" fill="none"/></svg>
-        </div>
-    </div>
-    <div class="input">
-      <label class="input__label">Дата и время заказа</label>
-        <div class="input-items">
-          <input class="input-items__item input-items__item-lock" type="text" placeholder="Введите" value="16.12.2021">
-          <svg class="input-items__img input-items__img-lock" viewBox="0 0 16 16" fill="#000" stroke="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z" stroke="none"/><path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z" stroke="none"/></svg>
-        </div>
-    </div>
-    </div>
-<!--------------------------------------- Кнопки -------------------------------------------->
-    <div class="header">
-      <svg class="svg-header">
-        <use xlink:href="#svg-h"></use>
-    </svg>
-    Button</div>
     <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <symbol id="bin" viewbox="0 0 16 16">
-        <path d="M6 14.5H15" fill="none"/>
-        <path d="M5 13L1.5 14.5L3 11M5 13L3 11M5 13L12 6M3 11L10 4M11 3L12.5 1.5L14.5 3.5L13 5M11 3L13 5M11 3L10 4M13 5L12 6M12 6L10 4" fill="none"/>
-      </symbol>
-  </svg>
-  <div class="buttons__table">
-    <div class="buttons__column">
-        <button class="button">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-icon">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-text">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-    </div>
-    <div class="buttons__column">
-        <button class="button button_small">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-icon button_small-no-icon">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-text button_small-no-text">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-    </div>
-    <div class="buttons__column">
-        <button class="button button_transparent">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-icon button_transparent">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-text button_transparent">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        </div>
-    <div class="buttons__column">
-        <button class="button button_transparent button_small">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-icon button_transparent button_small-no-icon">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-text button_transparent button_small-no-text">
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-    </div>
-    <div class="buttons__column">
-        <button class="button button_long button_disabled" disabled>
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-        <button class="button button_no-icon button_long button_disabled" disabled>
-            <svg class="button__icon">
-                <use xlink:href="#bin"></use>
-            </svg>
-            <span class="button__text">Text here</span>
-        </button>
-    </div>
-  </div>
-<!----------------------------------- Строка поиска ---------------------------------------->
-    <div class="searchbar-header">
-        <svg class="svg-header">
-          <use xlink:href="#svg-h"></use>
-      </svg>
-      Searchbar</div>
-    <div class="searchbar-wrapper">
-        <form class="searchbar__input">
-            <svg class="input__img input__img-search" viewBox="0 0 16 16" fill="none" stroke="#459DF5">
-                <path d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5" fill="none"/>
-            </svg>
-            <input class="searchbar__input searchbar__input_top" type="text" placeholder="Номер заказа или ФИО"></input>
-        </form>
-        <form class="searchbar__input">
-            <svg class="input__img input__img-search" viewBox="0 0 16 16" fill="none" stroke="#459DF5">
-            <path d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5" fill="none"/>
-            </svg>
-            <input class="searchbar__input searchbar__input_bot" value="50744" placeholder="Номер заказа или ФИО"></input>
-            <button class="searchbar__button searchbar__button_clear">
-            <svg class="button__img" viewBox="0 0 16 16" fill="none" stroke="#BAD8F5">
-            <path d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5" fill="none"/>
-            </svg> 
-            </button>
-        </form>
-    </div>
-<!------------------------------------- Checkbox ------------------------------------------>
-    <div class="header">
-        <svg class="svg-header">
-          <use xlink:href="#svg-h"></use>
-        </svg>
-      Checkbox
-    </div>
-    <div class="checkbox-wrapper">
-        <label class="checkbox__label">
-            <input class="checkbox__input" type="checkbox">
-            <svg class="checkbox__img" viewBox="0 0 16 16" fill="#FFF" stroke="none">
-            <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-            </svg>
-        </label>
-        <label class="checkbox__label">
-            <input class="checkbox__input" type="checkbox" checked>
-            <svg class="checkbox__img" viewBox="0 0 16 16" fill="#FFF" stroke="none">
-            <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-            </svg>
-        </label>
-    </div>
-<!----------------------------------------- Radio ----------------------------------------->
-    <div class="header">
-        <svg class="svg-header">
-          <use xlink:href="#svg-h"></use>
-        </svg>
-      Radio
-    </div>
-    <div class="radio-wrapper">
-        <div class="radio__item">
-            <input type="radio" id="radio__item_left" name="ritem" value="1">
-            <label for="radio__item_left"></label>
-        </div>
-        <div class="radio__item">
-            <input type="radio" id="radio__item_right" name="ritem" value="2" checked>
-            <label for="radio__item_right"></label>
-        </div>
-    </div>
-<!------------------------------------------- Выпадающее меню ----------------------->
+        <symbol id="incorrect" viewBox="0 0 16 16">
+            <path id="incorrect" fill="none" d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5"/>
+        </symbol>
 
+        <symbol id="disabled" viewBox="0 0 16 16">
+            <path id="disabled" fill-rule="evenodd" clip-rule="evenodd" d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z" stroke="none"/>
+            <path d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z" stroke="none"/>
+        </symbol>
+        
+        <symbol id="search" viewBox="0 0 16 16">
+        <path fill="none" d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5" />
+        </symbol>
+
+        <symbol id="component-icon" viewBox="0 0 26 26">
+            <rect opacity="0.8" x="0.272064" y="13" width="8" height="8" transform="rotate(-45 0.272064 13)" fill="#8055FF"/>
+            <rect opacity="0.8" x="7.34314" y="5.92894" width="8" height="8" transform="rotate(-45 7.34314 5.92894)" fill="#8055FF"/>
+            <rect opacity="0.8" x="14.4142" y="13" width="8" height="8" transform="rotate(-45 14.4142 13)" fill="#8055FF"/>
+            <rect opacity="0.8" x="7.34314" y="20.0711" width="8" height="8" transform="rotate(-45 7.34314 20.0711)" fill="#8055FF"/>
+        </symbol>
+
+        <symbol id="bin" viewbox="0 0 16 16">
+            <path d="M2 3.5H3.5M14 3.5H12.5M5.5 3.5H10.5M5.5 3.5V2.5C5.5 1.94772 5.94772 1.5 6.5 1.5H9.5C10.0523 1.5 10.5 1.94772 10.5 2.5V3.5M5.5 3.5H3.5M10.5 3.5H12.5M3.5 3.5V13.5C3.5 14.0523 3.94772 14.5 4.5 14.5H11.5C12.0523 14.5 12.5 14.0523 12.5 13.5V3.5" fill="none" stroke-linecap="round"/>
+            <path d="M6.5 6V12M9.5 6V12" fill="none" stroke-linecap="round"/>
+        </symbol>
+        
+        <symbol id="sun" viewBox="0 0 16 16">
+            <circle cx="8" cy="8" r="4" stroke="none"/>
+            <path d="M15 9L16 8L15 7H13V9H15Z" stroke="none"/>
+            <path d="M1 9L0 8L1 7H3V9H1Z" stroke="none"/>
+            <path d="M7 15L8 16L9 15V13H7V15Z" stroke="none"/>
+            <path d="M7 1L8 0L9 1V3H7V1Z" stroke="none"/>
+            <path d="M12.5 14H14L14 12.5L12.5 11L11 12.5L12.5 14Z" stroke="none"/>
+            <path d="M2 3.5L2 2L3.5 2L5 3.5L3.5 5L2 3.5Z" stroke="none"/>
+            <path d="M3.5 14H2L2 12.5L3.5 11L5 12.5L3.5 14Z" stroke="none"/>
+            <path d="M14 3.5V2L12.5 2L11 3.5L12.5 5L14 3.5Z" stroke="none"/>
+        </symbol>
+
+        <symbol id="moon" viewBox="0 0 16 16">
+            <path d="M8 15C12.0269 15 15.5 11.5021 15 7.5C14.7688 10.0468 12.6071 12 10 12C7.23858 12 5 9.76142 5 7C5 4.23858 7.23858 2 10 2C11 2 12 2.5 12 2.5C11 1.5 10 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z" stroke="none"/>
+        </symbol>
+       
+        <symbol id="search" viewBox="0 0 16 16">
+        <path fill="none" d="M10.0355 10.0355C11.9882 8.08291 11.9882 4.91709 10.0355 2.96447C8.08291 1.01184 4.91709 1.01184 2.96447 2.96447C1.01184 4.91709 1.01184 8.08291 2.96447 10.0355C4.91709 11.9882 8.08291 11.9882 10.0355 10.0355ZM10.0355 10.0355L14 14M14 14L14.5 13.5L11.5 10.5M14 14L13.5 14.5L10.5 11.5" />
+        </symbol>
+
+        <symbol id="filter" viewBox="0 0 16 16">
+            <path d="M12 4H4V5.5L7 8.5V12L9 13V8.5L12 5.5V4Z" stroke="none"/>
+        </symbol>  
+
+        <symbol id="refresh" viewBox="0 0 16 16">
+            <path d="M2.50251 7.5V8.5C2.50251 10.75 4.75251 13.5 8.00251 13.5C10 13.5 11.6187 12.5 12.6 11" fill="none"/>
+            <path d="M13.5 8.5V7.5C13.5 5.25 11.25 2.5 7.99997 2.5C6 2.5 4.38135 3.5 3.4 5" fill="none"/>
+            <path d="M4.5 9.5L2.50254 7.5L0.752533 9.75" fill="none"/>
+            <path d="M11.5 6.5L13.5 8.5L15.25 6.25" fill="none"/>
+        </symbol>
+
+        <symbol id="v_arrow" viewBox="0 0 16 16">
+            <path d="M5 6H11V6.5L8.25 11H7.75L5 6.5V6Z" stroke="none"/>
+        </symbol>
+
+        <symbol id="pencil" viewBox="0 0 16 16">
+            <path d="M6 14.5H15" fill="none"/>
+            <path d="M5 13L1.5 14.5L3 11M5 13L3 11M5 13L12 6M3 11L10 4M11 3L12.5 1.5L14.5 3.5L13 5M11 3L13 5M11 3L10 4M13 5L12 6M12 6L10 4" fill="none"/>
+        </symbol>
+
+        <symbol id="checkmark" viewBox="0 0 16 16">
+            <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
+        </symbol>
+
+        <symbol id="dot" viewBox="0 0 16 16">
+            <circle cx="8" cy="8" r="4" stroke="none"/>
+        </symbol>
+
+        <symbol id="abort" viewBox="0 0 16 16">
+            <path d="M12.5 12.5L3.5 3.5" fill="none"/>
+            <circle cx="8" cy="8" r="6.5" fill="none"/>
+        </symbol>
+
+    </svg>
+ 
+<div class="ui__container">
+    <div class="ui__form-wrapper">
+        <div class="ui__forms">
+            <div class="ui__item-name">
+                <div class="ui__item-icon">
+                    <svg class="ui__icon">
+                        <use xlink:href="#component-icon"></use>
+                    </svg>
+                </div>
+                <span class="ui__name-content">Input</span>
+            </div>
+            <div class="input">
+
+                <form class="input__form">
+                    <div class="input__group">
+                        <label class="input__control">
+                            <div class="input__field-name">Дата и время заказа</div>
+                            <div class="input__field input__field_empty">
+                                <input class="input__area" placeholder="Введите">
+                                <button class="input__button">
+                                    <svg class="input__icon">
+                                        <use xlink:href="#incorrect"></use>
+                                    </svg>
+                                    <svg class="input__icon">
+                                        <use xlink:href="#disabled"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </label>  
+                    </div>
+
+                    <div class="input__group">
+                        <label class="input__control">
+                            <div class="input__field-name">Дата и время заказа</div>
+                            <div class="input__field input__field_incorrect">
+                                <input class="input__area" placeholder="Введите" value="06.12.2021">
+                                <button class="input__button">
+                                    <svg class="input__icon input__icon_incorrect">
+                                        <use xlink:href="#incorrect"></use>
+                                    </svg>
+                                    <svg class="input__icon">
+                                        <use xlink:href="#disabled"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="input__group">
+                        <label class="input__control">
+                            <div class="input__field-name">Дата и время заказа</div>
+                            <div class="input__field input__field_disabled">
+                                <input class="input__area" placeholder="Введите" value="06.12.2021">
+                                <button class="input__button">
+                                    <svg class="input__icon">
+                                        <use xlink:href="#incorrect"></use>
+                                    </svg>
+                                    <svg class="input__icon input__icon_disabled">
+                                        <use xlink:href="#disabled"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            
+            </div>
+        </div>
+        <div class="ui__forms">
+            <div class="ui__searchbar">
+                <div class="ui__item-name">
+                    <div class="ui__item-icon">
+                        <svg class="ui__icon">
+                            <use xlink:href="#component-icon"></use>
+                        </svg>
+                    </div>
+                    <span class="ui__name-content">Searchbar</span>
+                </div>
+                <div class="searchbar">
+
+                    <form class="searchbar__form">
+                        <label class="searchbar__group">
+                            <div class="searchbar__field searchbar__field_empty">
+                                <div class="searchbar__search-area">
+                                    <svg class="searchbar__icon searchbar__icon_active">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                    <input class="searchbar__area" placeholder="Номер заказа или ФИО">  
+                                </div>
+                                <button class="searchbar__button">
+                                    <svg class="searchbar__icon">
+                                        <use xlink:href="#incorrect"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </label>
+
+                        <label class="searchbar__group">
+                            <div class="searchbar__field searchbar__field_active">
+                                <div class="searchbar__search-area">
+                                    <svg class="searchbar__icon searchbar__icon_active">
+                                        <use xlink:href="#search"></use>
+                                    </svg>
+                                    <input class="searchbar__area" placeholder="Номер заказа или ФИО" value="50744">
+                                </div>
+                                <button class="searchbar__button">
+                                    <svg class="searchbar__icon searchbar__icon_incorrect">
+                                        <use xlink:href="#incorrect"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </label>
+                    </form>
+        
+                </div>
+            </div>
+            <div class="ui__button-forms">
+                <div class="ui__checkbox-group">
+                    <div class="ui__item-name">
+                        <div class="ui__item-icon">
+                            <svg class="ui__icon">
+                                <use xlink:href="#component-icon"></use>
+                            </svg>
+                        </div>
+                        <span class="ui__name-content">Checkbox</span>
+                    </div>
+                    <div class="checkbox">
+
+                        <form class="checkbox__form">
+            
+                            <label class="checkbox__control">
+                                <div class="checkbox__group">
+                                    <input type="checkbox" class="checkbox__area">
+                                    <svg class="checkbox__icon">
+                                        <use xlink:href="#checkmark"></use>
+                                    </svg>
+                                </div>                    
+                            </label>
+            
+                            <label class="checkbox__control">
+                                <div class="checkbox__group">
+                                    <input type="checkbox" class="checkbox__area" checked>
+                                    <svg class="checkbox__icon">
+                                        <use xlink:href="#checkmark"></use>
+                                    </svg>
+                                </div>                    
+                            </label>  
+            
+                        </form>
+                    </div>
+                </div>
+                <div class="ui__radio-group">
+                    <div class="ui__item-name">
+                        <div class="ui__item-icon">
+                            <svg class="ui__icon">
+                                <use xlink:href="#component-icon"></use>
+                            </svg>
+                        </div>
+                        <span class="ui__name-content">Radio</span>
+                    </div>
+                    <div class="radio">
+
+                        <form class="radio__form">
+                            <label class="radio__control">
+                                <input type="radio" class="radio__area" name="admin-panel-radio" value="1">                 
+                            </label>
+                            
+                            <label class="radio__control">
+                                <input type="radio" class="radio__area" name="admin-panel-radio" value="2" checked>                
+                            </label>
+                        </form>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui__forms">
+            <div class="ui__item-name">
+                <div class="ui__item-icon">
+                    <svg class="ui__icon">
+                        <use xlink:href="#component-icon"></use>
+                    </svg>
+                </div>
+                <span class="ui__name-content">Button</span>
+            </div>
+            <form class="buttons__table">
+                <div class="buttons__row">
+                    <div class="buttons__column">
+                        <button class="button button_primary-size_large">
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_primary-size_medium">
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_primary-size_small">
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="buttons__column">
+                        <button class="button button_primary-size_large button_transparent">
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_primary-size_medium button_transparent">
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_primary-size_small button_transparent">
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                        </button>
+                        </div>
+                    <div class="buttons__column">
+                        <button class="button button_primary-size_large button_length_long button_disabled" disabled>
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_primary-size_medium button_length_long button_disabled" disabled>
+                            <span class="button__text">Text here</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="buttons__row">
+                    <div class="buttons__column">
+                        <button class="button button_secondary-size_large">
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_secondary-size_medium">
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_secondary-size_small">
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="buttons__column">
+                        <button class="button button_secondary-size_large button_transparent">
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_secondary-size_medium button_transparent">
+                            <span class="button__text">Text here</span>
+                        </button>
+    
+                        <button class="button button_secondary-size_small button_transparent">
+                            <svg class="button__icon">
+                                <use xlink:href="#bin"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="ui__forms">
+            <div class="ui__item-name">
+                <div class="ui__item-icon">
+                    <svg class="ui__icon">
+                        <use xlink:href="#component-icon"></use>
+                    </svg>
+                </div>
+                <span class="ui__name-content">Dropdowns</span>
+            </div>
+
+            <div class="dropdowns__table">
+                <div class="dropdowns__row">
+                    <div class="dropdowns__column">
+                        <form class="dropdown__form">
+                            <ul class="dropdown__list">
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <div class="dropdown__checkbox-group">
+                                            <input type="checkbox" class="dropdown__checkbox">
+                                            <svg class="dropdown__checkbox-icon">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </div>
+                                        <span class="dropdown__item-title">Новый</span>      
+                                    </label>
+                                </li>
+                                
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <div class="dropdown__checkbox-group">
+                                            <input type="checkbox" class="dropdown__checkbox">
+                                            <svg class="dropdown__checkbox-icon">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </div>
+                                        <span class="dropdown__item-title">Расчет</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <div class="dropdown__checkbox-group">
+                                            <input type="checkbox" class="dropdown__checkbox">
+                                            <svg class="dropdown__checkbox-icon">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </div>
+                                        <span class="dropdown__item-title">Подтвержден</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <div class="dropdown__checkbox-group">
+                                            <input type="checkbox" class="dropdown__checkbox">
+                                            <svg class="dropdown__checkbox-icon">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </div>
+                                        <span class="dropdown__item-title">Отложен</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <div class="dropdown__checkbox-group">
+                                            <input type="checkbox" class="dropdown__checkbox">
+                                            <svg class="dropdown__checkbox-icon">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </div>
+                                        <span class="dropdown__item-title">Выполнен</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <div class="dropdown__checkbox-group">
+                                            <input type="checkbox" class="dropdown__checkbox">
+                                            <svg class="dropdown__checkbox-icon">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </div>
+                                        <span class="dropdown__item-title">Отменен</span>      
+                                    </label>
+                                </li>
+                                
+                            </ul>
+                        </form>
+                    </div>
+    
+                    <div class="dropdowns__column">
+                        <form class="dropdown__form">
+                            <ul class="dropdown__list">
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <input type="radio" class="dropdown__radio" name="dropdown-status" value="new">
+                                        <span class="dropdown__item-title">Новый</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <input type="radio" class="dropdown__radio" name="dropdown-status" value="payment">
+                                        <span class="dropdown__item-title">Расчет</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <input type="radio" class="dropdown__radio" name="dropdown-status" value="confirmed">
+                                        <span class="dropdown__item-title">Подтвержден</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <input type="radio" class="dropdown__radio" name="dropdown-status" value="postponed">
+                                        <span class="dropdown__item-title">Отложен</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <input type="radio" class="dropdown__radio" name="dropdown-status" value="completed">
+                                        <span class="dropdown__item-title">Выполнен</span>      
+                                    </label>
+                                </li>
+    
+                                <li class="dropdown__item">
+                                    <label class="dropdown__control">
+                                        <input type="radio" class="dropdown__radio" name="dropdown-status" value="canceled">
+                                        <span class="dropdown__item-title">Отменен</span>      
+                                    </label>
+                                </li>
+                                                        
+                            </ul>
+                        </form>
+                    </div>
+    
+                </div>
+    
+                <div class="dropdowns__row">
+                    <div class="dropdowns__column">
+                        <form class="dropdown__form-to-page">
+                            <label class="dropdown__form-to-page-control">
+                                <span class="dropdown__form-title">Номер страницы</span>
+                                <div class="dropdown__input-wrapper">
+                                    <input class="dropdown__form-to-page-input" placeholder="Введите номер">  
+                                </div>
+                            </label>
+                        </form>
+                    </div>
+    
+                    <div class="dropdowns__column">
+                        <form class="dropdown__form-delete">
+                                <span class="dropdown__form-title">Удалить n записей?</span>
+                                <button class="dropdown__button dropdown__button_transparent">
+                                    <span class="dropdown__button__text">Удалить</span>
+                                </button>
+                                <button class="dropdown__button">
+                                    <span class="dropdown__button__text">Отмена</span>
+                                </button>
+                        </form>
+                    </div>
+    
+                    <div class="dropdowns__column">
+                        <form class="dropdown__form-theme-switcher">
+                            <span class="dropdown__form-title">Выберите тему</span>
+                            <button class="dropdown__button dropdown__button_transparent">
+                                <svg class="dropdown__icon">
+                                    <use xlink:href="#sun"></use>
+                                </svg>
+                                <span class="dropdown__button__text">Cветлая</span>
+                            </button>
+                            <button class="dropdown__button">
+                                <svg class="dropdown__icon">
+                                    <use xlink:href="#moon"></use>
+                                </svg>
+                                <span class="dropdown__button__text">Темная</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui__forms">
+            <div class="ui__item-name">
+                <div class="ui__item-icon">
+                    <svg class="ui__icon">
+                        <use xlink:href="#component-icon"></use>
+                    </svg>
+                </div>
+                <span class="ui__name-content">Body</span>
+            </div>
+            <div class="main-wrapper main-wrapper_ui">
+                <div class="page-header">
+                    <h1 class="page-header__text">Список заказов</h1>
+                    <button class="page-header__button page-header__button_transparent">
+                        <svg class="page-header__icon">
+                            <use xlink:href="#sun"></use>
+                        </svg>
+                        <span class="page-header__button__text">Cветлая тема</span>
+                    </button>
+                </div>
+                <div class="filter">
+                    <div class="filter__wrapper">
+                        <div class="filter__group">
+                            <form class="filter__form">
+                                <label class="filter__searchbar-group">
+                                    <div class="filter__searchbar-field filter__searchbar-field_empty">
+                                        <div class="filter__searchbar-search-area">
+                                            <svg class="filter__searchbar-icon filter__searchbar-icon_active">
+                                                <use xlink:href="#search"></use>
+                                            </svg>
+                                            <input class="filter__searchbar-area" placeholder="Номер заказа или ФИО">  
+                                        </div>
+                                        <button class="filter__searchbar-button">
+                                            <svg class="filter__searchbar-icon">
+                                                <use xlink:href="#incorrect"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </label>
+        
+                                <button class="filter-button">
+                                    <svg class="filter-button__icon">
+                                        <use xlink:href="#filter"></use>
+                                    </svg>
+                                    <span class="filter-button__text">Фильтры</span>
+                                </button>
+        
+                                <button class="filter-button filter-button_no-icon">
+                                    <span class="filter-button__text">Сбросить фильтры</span>
+                                </button>
+                            </form>
+        
+                            <div class="filter__loader">
+                                <svg class="filter__loader-icon">
+                                    <use xlink:href="#refresh"></use>
+                                </svg>
+                                <span class="filter__loader-text">Загрузка</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter__wrapper">
+                        <form class="filter__form">
+                            <div class="filter__input">
+                                <label class="filter__input-control">
+                                    <span class="filter__input-title">Дата оформления</span>
+                                    <div class="filter__input-field filter__input-field_empty">
+                                        <input class="filter__input-area" placeholder="dd.mm.dddd" value="20.01.2021">
+                                        <button class="filter__input-button">
+                                            <svg class="filter__input-icon filter__input-icon_incorrect">
+                                                <use xlink:href="#incorrect"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </label>  
+        
+                                <label class="filter__input-control">
+                                    <div class="filter__input-field filter__input-field_empty">
+                                        <input class="filter__input-area" placeholder="dd.mm.dddd">
+                                        <button class="filter__input-button">
+                                            <svg class="filter__input-icon">
+                                                <use xlink:href="#incorrect"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </label>
+                            </div>
+        
+                            <div class="filter__input">
+                                <ul class="filter__dropdown-list">
+            
+                                    <li class="filter__dropdown-item">
+                                        <label class="filter__dropdown-control">
+                                            <div class="filter__dropdown-checkbox-group">
+                                                <input type="checkbox" class="filter__dropdown-checkbox">
+                                                <svg class="filter__dropdown-icon">
+                                                    <use xlink:href="#checkmark"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="filter__dropdown-item-title">Новый</span>      
+                                        </label>
+                                    </li>
+        
+                                    <li class="filter__dropdown-item">
+                                        <label class="filter__dropdown-control">
+                                            <div class="filter__dropdown-checkbox-group">
+                                                <input type="checkbox" class="filter__dropdown-checkbox">
+                                                <svg class="filter__dropdown-icon">
+                                                    <use xlink:href="#checkmark"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="filter__dropdown-item-title">Расчет</span>      
+                                        </label>
+                                    </li>
+        
+                                    <li class="filter__dropdown-item">
+                                        <label class="filter__dropdown-control">
+                                            <div class="filter__dropdown-checkbox-group">
+                                                <input type="checkbox" class="filter__dropdown-checkbox">
+                                                <svg class="filter__dropdown-icon">
+                                                    <use xlink:href="#checkmark"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="filter__dropdown-item-title">Подтвержден</span>      
+                                        </label>
+                                    </li>
+        
+                                    <li class="filter__dropdown-item">
+                                        <label class="filter__dropdown-control">
+                                            <div class="filter__dropdown-checkbox-group">
+                                                <input type="checkbox" class="filter__dropdown-checkbox">
+                                                <svg class="filter__dropdown-icon">
+                                                    <use xlink:href="#checkmark"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="filter__dropdown-item-title">Отложен</span>      
+                                        </label>
+                                    </li>
+        
+                                    <li class="filter__dropdown-item">
+                                        <label class="filter__dropdown-control">
+                                            <div class="filter__dropdown-checkbox-group">
+                                                <input type="checkbox" class="filter__dropdown-checkbox">
+                                                <svg class="filter__dropdown-icon">
+                                                    <use xlink:href="#checkmark"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="filter__dropdown-item-title">Выполнен</span>      
+                                        </label>
+                                    </li>
+        
+                                    <li class="filter__dropdown-item">
+                                        <label class="filter__dropdown-control">
+                                            <div class="filter__dropdown-checkbox-group">
+                                                <input type="checkbox" class="filter__dropdown-checkbox">
+                                                <svg class="filter__dropdown-icon">
+                                                    <use xlink:href="#checkmark"></use>
+                                                </svg>
+                                            </div>
+                                            <span class="filter__dropdown-item-title">Отменен</span>      
+                                        </label>
+                                    </li>                             
+                                </ul>
+                                <label class="filter__input-control">
+                                    <span class="filter__input-title">Статус заказа</span>
+                                    <div class="filter__input-field filter__input-field_empty filter__input-field_long">
+                                        <input class="filter__input-area" placeholder="Выберите статус заказа" value="Любой">
+                                        <button class="filter__input-button">
+                                            <svg class="filter__input-icon filter__input-icon_drop">
+                                                <use xlink:href="#v_arrow"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </label>
+                            </div>
+        
+                            <div class="filter__input">
+                                <label class="filter__input-control">
+                                    <span class="filter__input-title">Сумма заказа</span>
+                                    <div class="filter__input-field filter__input-field_empty filter__input-field_short">
+                                        <input class="filter__input-area" placeholder="" value="5000">
+                                        <button class="filter__input-button">
+                                            <svg class="filter__input-icon filter__input-icon_incorrect">
+                                                <use xlink:href="#incorrect"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </label>  
+        
+                                <label class="filter__input-control">
+                                    <div class="filter__input-field filter__input-field_empty filter__input-field_short">
+                                        <input class="filter__input-area" placeholder="₽">
+                                        <button class="filter__input-button">
+                                            <svg class="filter__input-icon">
+                                                <use xlink:href="#incorrect"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </label>
+                            </div>
+        
+                            <button class="filter-button filter-button_no-icon filter-button_short">
+                                <span class="filter-button__text">Применить</span>
+                            </button>
+        
+                        </form>
+                    </div>
+                </div>
+                <div class="table">
+                    <div class="table__header">
+                        <ul class="table__header-list">
+                            <li class="table__header-item">
+                                <label class="table__checkbox-control">
+                                    <div class="table__checkbox-group">
+                                        <input type="checkbox" class="table__checkbox">
+                                        <svg class="table__header-icon">
+                                            <use xlink:href="#checkmark"></use>
+                                        </svg>
+                                    </div>   
+                                </label>
+                            </li>
+                            <li class="table__header-item">
+                                <span class="table__header-item-text">#</span>
+                            </li>
+                            <li class="table__header-item">
+                                <span class="table__header-item-text">Дата</span>
+                                <svg class="table__header-icon table__header-icon_active">
+                                    <use xlink:href="#v_arrow"></use>
+                                </svg>
+                            </li>
+                            <li class="table__header-item">
+                                <span class="table__header-item-text">Статус</span>
+                                <svg class="table__header-icon table__header-icon_active">
+                                    <use xlink:href="#v_arrow"></use>
+                                </svg>
+                            </li>
+                            <li class="table__header-item">
+                                <span class="table__header-item-text">Позиций</span>
+                                <svg class="table__header-icon table__header-icon_active">
+                                    <use xlink:href="#v_arrow"></use>
+                                </svg>
+                            </li>
+                            <li class="table__header-item">
+                                <span class="table__header-item-text">Сумма</span>
+                                <svg class="table__header-icon table__header-icon_active">
+                                    <use xlink:href="#v_arrow"></use>
+                                </svg>
+                            </li>
+                            <li class="table__header-item">
+                                <span class="table__header-item-text">ФИО покупателя</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="table__body">
+                        <ul class="table__body-list">
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                <ul class="table__body-item-row">
+                                    <li class="table__header-item">
+                                        <div class="table__checkbox-group">
+                                            <input type="checkbox" class="table__checkbox">
+                                            <svg class="table__header-icon">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                        </div>
+                                    </li>
+                                    <li class="table__header-item">
+                                        <span class="table__header-item-text">1270989</span>
+                                    </li>
+                                    <li class="table__header-item">
+                                        <span class="table__header-item-text">15.02.2021, 18:00</span>
+                                    </li>
+                                    <li class="table__header-item">
+                                        <svg class="table__header-icon table__header-icon_orange">
+                                            <use xlink:href="#dot"></use>
+                                        </svg>
+                                        <span class="table__header-item-text">Новый</span>
+                                    </li>
+                                    <li class="table__header-item">
+                                        <span class="table__header-item-text">6</span>
+                                    </li>
+                                    <li class="table__header-item">
+                                        <span class="table__header-item-text">101 907 ₽</span>
+                                    </li>
+                                    <li class="table__header-item">
+                                        <span class="table__header-item-text">Чернышев Филипп Семёнович</span>
+                                    </li>
+                                </ul>
+                                </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">2353474</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">12.03.2021, 05:15</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <svg class="table__header-icon table__header-icon_orange">
+                                                <use xlink:href="#dot"></use>
+                                            </svg>
+                                            <span class="table__header-item-text">Новый</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">2</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">98 003 ₽</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">Филиппов Степан Васильевич</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1103397</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">03.02.2021, 08:04</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <svg class="table__header-icon table__header-icon_blue">
+                                                <use xlink:href="#dot"></use>
+                                            </svg>
+                                            <span class="table__header-item-text">Расчет</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">5</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">3 800 ₽</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">Тихонова Алина Давидовна</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">6924662</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">21.01.2021, 13:32</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <svg class="table__header-icon table__header-icon_green">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                            <span class="table__header-item-text table__header-item-text_green">Выполнен</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">5 700 ₽</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">Александрова Юлия Никитична</span>
+                                        </li>
+                                    </ul>
+                            </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">2200086</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">19.01.2021, 10:28</span>
+                                        </li>
+                                        <li class="table__header-item table__header-item_half-transparent">
+                                            <svg class="table__header-icon table__header-icon_black ">
+                                                <use xlink:href="#abort"></use>
+                                            </svg>
+                                            <span class="table__header-item-text">Отменен</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">–</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">–</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">Андрей</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">2842064</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">04.01.2021, 12:12</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <svg class="table__header-icon table__header-icon_orange">
+                                                <use xlink:href="#dot"></use>
+                                            </svg>
+                                            <span class="table__header-item-text">Отложен</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">20 500 ₽</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">Судакова Анастасия Ильинична</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1730071</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">17.12.2020, 22:45</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <svg class="table__header-icon table__header-icon_green">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                            <span class="table__header-item-text table__header-item-text_green">Выполнен</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1 399 ₽</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">Зверева Арина Николаевна</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">7987376</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">07.12.2020, 08:57</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <svg class="table__header-icon table__header-icon_green">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                            <span class="table__header-item-text table__header-item-text_green">Выполнен</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">3</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">117 810 ₽</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">Карташов Максим Кириллович</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1373265</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">15.11.2020, 14:26</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <svg class="table__header-icon table__header-icon_green">
+                                                <use xlink:href="#checkmark"></use>
+                                            </svg>
+                                            <span class="table__header-item-text table__header-item-text_green">Выполнен</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">17 008 ₽</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">Васильев Вадим Даниилович</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </li>
+        
+                            <li class="table__body-item">
+                                <label class="table__checkbox-control">
+                                    <ul class="table__body-item-row">
+                                        <li class="table__header-item">
+                                            <label class="table__checkbox-control">
+                                                <div class="table__checkbox-group">
+                                                    <input type="checkbox" class="table__checkbox">
+                                                    <svg class="table__header-icon">
+                                                        <use xlink:href="#checkmark"></use>
+                                                    </svg>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">1311100</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">07.11.2020, 18:52</span>
+                                        </li>
+                                        <li class="table__header-item table__header-item_half-transparent">
+                                            <svg class="table__header-icon table__header-icon_black ">
+                                                <use xlink:href="#abort"></use>
+                                            </svg>
+                                            <span class="table__header-item-text">Отменен</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">–</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">–</span>
+                                        </li>
+                                        <li class="table__header-item">
+                                            <span class="table__header-item-text">София</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </li>
+                
+                        </ul>
+                    </div>
+                    <div class="table__footer">
+                        <form class="table__footer-action">
+                            <span class="table__footer-text">Выбрано записей: 5</span>
+                            <button class="table__footer-button">
+                                <svg class="table__footer-icon">
+                                    <use xlink:href="#pencil"></use>
+                                </svg>
+                                <span class="table__footer-button-text">Изменить статус</span>
+                            </button>
+                            <button class="table__footer-button table__footer-button_red">
+                                <svg class="table__footer-icon">
+                                    <use xlink:href="#bin"></use>
+                                </svg>
+                                <span class="table__footer-button-text">Удалить</span>
+                            </button>
+                        </form>
+                        <form class="table__footer-dropdown">
+                            <span class="table__dropdown-title">Удалить n записей?</span>
+                            <button class="table__dropdown-button table__dropdown-button_transparent">
+                                <span class="table__dropdown-button-text">Удалить</span>
+                            </button>
+                            <button class="table__dropdown-button">
+                                <span class="table__dropdown-button-text">Отмена</span>
+                            </button>
+                        </form>
+        
+                        <div class="table__footer-pagination">
+                            <form class="table__footer-pagination-form">
+                                <button class="table__footer-button table__footer-button_small">
+                                    <span class="table__footer-button-text">1</span>
+                                </button>
+                                <button class="table__footer-button table__footer-button_small table__footer-button_transparent">
+                                    <span class="table__footer-button-text">2</span>
+                                </button>
+                                <button class="table__footer-button table__footer-button_small table__footer-button_transparent">
+                                    <span class="table__footer-button-text">3</span>
+                                </button>
+                                <span class="table__pagination-continue">…</span>
+                                <button class="table__footer-button table__footer-button_small table__footer-button_transparent">
+                                    <span class="table__footer-button-text">18</span>
+                                </button>
+                            </form>
+                                <button class="table__footer-button table__footer-button_small table__footer-button_transparent">
+                                    <span class="table__footer-button-text">#</span>
+                                </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

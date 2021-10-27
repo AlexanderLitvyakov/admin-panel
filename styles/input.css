@@ -1,62 +1,156 @@
-:root{
-    --background-input-wrapper: #E5E5E5;
-    --background-input-border: #8055FF;
-    --input-font:#000;
-    --input-border-placeholder:#459DF5;
-    --border-error:#F53152;
-    --input-lock:#BAD8F5;
-    
-  }
-  body{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 13px;
-  }
-  .input-wrapper{
-  width: 22rem;
-  height: 25rem;
-  border: 0.0625rem dashed var(--background-input-border);
-  border-radius: 0.25rem;
-  padding: 3rem;
+:root {
+  --background-input-dark: #000;
+  --background-input-white: #fff;
+  --background-input-main: #E5E5E5;
+  --background-input-opacity: rgba(0,0,0,0);
+  --background-input-light: #BAD8F5;
+  --background-input-medium: #459DF5;
+  --background-input-icorrect: #F53152;
+  --background-input-stroke-middle: #8055FF;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--background-input-main)
+}
+
+.svg {
+  display: none;
+}
+.container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  background-color: var(--background-input-wrapper);
-  }
-  
-  .input__label {
-    display: block;
-    margin-bottom: 0.375rem;
-  }
-  .input-items{
-      position: relative;
-  }
-  .input-items__item {
-    width: 16rem;
-  height: 2rem;
-  border: 0.0625rem solid var(--input-border-placeholder);
-  color: var(--input-font);
+  padding: 3rem;
+  height: 100vh;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 22rem;
+  height: 25rem;
+  border: 0.0625rem dashed var(--background-input-stroke-middle);
+  box-sizing: border-box;
   border-radius: 0.25rem;
-  padding: 0.5rem;
-  font-size: 13px;
-  outline-width: 0;
-  }
-  .input-items__item::placeholder {
-    color: var(--input-border-placeholder);
-  }
-  .input-items__img {
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-  .input-items__item-error {
-  border: 0.0625rem solid var(--border-error);
-    
-  }
-  .input-items__item-lock{
+}
+
+.input__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input__group {
+  display: flex;
+  flex-direction: column;
+  width: 16rem; 
+  font-size: 0.75rem;   
+  margin-bottom: 4rem;
+}
+
+.input__group:last-child {
+  margin: 0;
+}
+
+.input__field-name {
+  display: flex;
+  margin-bottom: 0.5rem;
+  line-height: 1rem;
+  color: var(--background-input-dark);
+}
+
+.input__field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+  background-color: var(--background-input-white);
+  border: 0.0625rem solid;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+}
+
+.input__field:focus-within {
+  box-shadow: 0 0 0.5rem var(--background-input-light);
+}
+
+.input__field_empty {
+  border-color: var(--background-input-medium);
+}
+
+.input__field_incorrect {
+  border-color: var(--background-input-icorrect);
+}
+
+.input__field_incorrect:focus-within {
+  box-shadow: 0 0 0.25rem var(--background-input-icorrect);
+}
+
+.input__field_disabled {
+  border-color: var(--background-input-medium);
+  background-color: var(--background-input-light);
   pointer-events: none;
-  background-color: var(--input-lock);
-  border: 0.0625rem solid var(--input-border-placeholder);;
-  }
+}
+
+.input__area {
+  display: flex;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  line-height: 1rem;
+  background-color: inherit;
+  outline: 0;
+  color: inherit;
+}
+
+.input__area::placeholder {
+  color: var(--background-input-light);
+}
+
+.input__field_incorrect {
+  color: var(--background-input-dark);
+}
+
+.input__field_disabled {
+  color: var(--background-input-dark);
+}
+
+.input__icon-area {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.input__button {
+  padding: 0 0 0 0.125rem;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.input__icon {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  fill: inherit;
+}
+
+.input__icon_incorrect {
+  display: block;
+  stroke: var(--background-input-light);
+}
+
+.input__icon_incorrect:hover {
+  stroke: var(--background-input-medium);
+}
+
+.input__icon_disabled {
+  display: block;
+}
