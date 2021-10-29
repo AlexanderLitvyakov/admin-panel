@@ -1,0 +1,61 @@
+:root {
+    --background-ui-main: #E5E5E5;
+    --background-ui-middle: #8055FF;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--background-ui-main);
+}
+
+.ui__container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    width: 100%;
+}
+
+.ui__form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ui__forms {
+    display: flex;
+    flex-direction: column;
+    margin: 0 6rem 4.75rem 0;
+}
+
+.ui__forms:last-child {
+    margin: 0;
+}
+
+.ui__button-forms {
+    display: flex;
+}
+
+.ui__searchbar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.75rem;
+}
+
+.ui__checkbox-group {
+    margin-right: 3rem;
+}
+
+.ui__item-name {
+    height: 1.25rem;
+    color: var(--background-ui-middle);
+    font-size: 0.75rem;
+}
+
+.ui__item-name {
+    display: flex;
+}
+
+.ui__icon {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.25rem;
+}

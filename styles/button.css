@@ -1,0 +1,179 @@
+:root {
+    --background-buttons-dark: #000;
+    --background-buttons-white: #fff;
+    --background-buttons-light: #BAD8F5;
+    --background-buttons-medium: #459DF5;
+    --background-buttons-stroke-middle: #8055FF;
+    --background-buttons-main: #E5E5E5;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--background-buttons-main);
+}
+
+.svg {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    height: 100vh;
+}
+
+.buttons__table {
+    display: flex;
+    flex-direction: column;
+    width: 36rem;
+    height: 23.5rem;
+    padding: 3rem;
+    border: 0.0625rem dashed var(--background-buttons-stroke-middle);
+    border-radius: 0.25rem;
+}
+
+.buttons__column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33.3%;
+}
+
+.buttons__row {
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+.buttons__row:last-child {
+    margin: 0;
+}
+
+.buttons__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--background-buttons-white);
+    background-color: var(--background-buttons-medium);
+    cursor: pointer;
+}
+
+.button_primary-size_large {
+    height: 2rem;
+    width: 7rem;
+}
+
+.button_primary-size_medium {
+    height: 2rem;
+    width: 5.5rem;
+}
+
+.button_primary-size_small {
+    height: 2rem;
+    width: 2rem;
+    padding: 0.25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_primary-size_small .button__icon {
+    margin: 0;
+}
+
+.button:last-child {
+    margin: 0;
+}
+
+.button:hover {
+    box-shadow: 0 0 0.25rem var(--background-buttons-medium);
+}
+
+.button:focus,
+.button:active {
+    outline: none;
+    box-shadow: 0 0 0.25rem var(--background-buttons-medium);
+}
+
+.button_transparent,
+.button_transparent .button__icon {
+    background-color: transparent;
+    color: var(--background-buttons-medium);
+    stroke: var(--background-buttons-medium);
+}
+
+.button_transparent:hover {
+    background-color: var(--background-buttons-light);
+    box-shadow: none;
+}
+
+.button_transparent:active {
+    box-shadow: 0 0 0.25rem var(--background-buttons-medium);
+}
+
+.button_length_long {
+    width: 10rem;
+}
+
+.button_disabled,
+.button_disabled .button__icon {
+    pointer-events: none;
+    background-color: transparent;
+    color: var(--background-buttons-dark);
+    stroke: var(--background-buttons-dark);
+}
+
+.button_secondary-size_large {
+    height: 1.5rem;
+    width: 5.75rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.button_secondary-size_medium {
+    width: 4.5rem;
+    height: 1.5rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.button_secondary-size_small {
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.button_secondary-size_large .button__icon {
+    margin-right: 0.25rem;
+}
+
+.button_secondary-size_large:last-child .button__icon {
+    margin-right: 0;
+}
+
+.button__icon {
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    stroke: var(--background-buttons-white);
+}
+
+.button__icon:last-child {
+    margin: 0;
+}
+
+.button__text {
+    display: flex;
+    width: 3.5rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.8125rem;
+}
